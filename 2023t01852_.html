@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Text Editor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .toolbar button {
+      background: none;
+      border: none;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .toolbar img {
+      width: 24px;
+      height: 24px;
+    }
+    .editor {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      min-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Online Text Editor</h2>
+  <div class="toolbar">
+    <button onclick="format('bold')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-bold-40.png" alt="Bold">
+    </button>
+    <button onclick="format('italic')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-italic-48.png" alt="Italic">
+    </button>
+    <button onclick="format('underline')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-underline-50.png" alt="Underline">
+    </button>
+    <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-text-color-50.png">
+    <input type="color" onchange="format('foreColor', this.value)">
+    <button onclick="format('justifyLeft')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-align-left-50.png" alt="Align Left">
+    </button>
+    <button onclick="format('justifyCenter')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-align-center-50.png" alt="Align Center">
+    </button>
+    <button onclick="format('justifyRight')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-align-right-50.png"alt="Align Right">
+    </button>
+    <button onclick="format('justifyFull')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-align-justify-24.png" alt="Justify">
+    </button>
+    <button onclick="format('undo')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-undo-40.png" alt="Undo">
+    </button>
+    <button onclick="format('redo')">
+      <img src="C:\Users\ACER\OneDrive\Documents\Resources\icons8-redo-40.png"alt="Redo">
+    </button>
+  </div>
+  <div class="editor" contenteditable="true">
+    
+  </div>
+
+  <script>
+    function format(command, value = null) {
+      document.execCommand(command, false, value);
+    }
+  </script>
+</body>
+</html>
